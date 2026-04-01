@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GS.Fotografia — Imagens que contam histórias inesquecíveis | Brasília DF</title>
+  <meta name="description" content="Fotógrafo profissional em Brasília DF. Especializado em casamentos, ensaios de casal, chá de fralda e eventos. Mais de 2 anos de experiência, 14+ projetos realizados. Solicite seu orçamento." />
+  <meta name="keywords" content="fotógrafo Brasília, fotografia de casamento, ensaio de casal, chá de fralda, fotógrafo DF, GS Fotografia" />
+  <meta name="author" content="GS.Fotografia" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GS.Fotografia — Fotógrafo Profissional em Brasília DF" />
+  <meta property="og:description" content="Casamentos, ensaios, eventos e muito mais. Contatos e portfólio completo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================
+       CSS CUSTOM PROPERTIES — PALETA E TIPOGRAFIA
+    ================================================ */
+    :root {
+      --bg-primary:     #0A0A0A;
+      --bg-secondary:   #111111;
+      --bg-card:        #141414;
+      --bg-elevated:    #1A1A1A;
+      --gold:           #C9A96E;
+      --gold-light:     #DFC08A;
+      --gold-dim:       #96774A;
+      --text-primary:   #F5F0E8;
+      --text-secondary: #B8AFA3;
+      --text-muted:     #7A7068;
+      --off-white:      #EDE8E0;
+      --border:         rgba(201,169,110,0.15);
+      --border-subtle:  rgba(245,240,232,0.08);
+      --shadow:         0 4px 32px rgba(0,0,0,0.6);
+      --shadow-gold:    0 4px 24px rgba(201,169,110,0.18);
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Outfit', system-ui, sans-serif;
+
+      --transition-fast:   150ms ease;
+      --transition-base:   300ms ease;
+      --transition-slow:   500ms ease;
+      --transition-smooth: 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+
+      --header-h: 80px;
+    }
+
+    /* ================================================
+       RESET E BASE
+    ================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul { list-style: none; }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--font-body);
+    }
+
+    /* ================================================
+       UTILITÁRIOS
+    ================================================ */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 20px 0 32px;
+    }
+
+    /* ================================================
+       FADE-IN ANIMATIONS (CSS — sem depender de JS)
+    ================================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.5; }
+      50%       { opacity: 1; }
+    }
+
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* JS adds .visible class — but content is ALWAYS readable without JS */
+    .reveal {
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* ================================================
+       SCROLLBAR CUSTOM
+    ================================================ */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+    /* ================================================
+       HEADER / NAVBAR
+    ================================================ */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      transition: background var(--transition-base), box-shadow var(--transition-base), height var(--transition-base);
+    }
+
+    /* Estado padrão: transparente sobre hero */
+    #header .header-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Após scroll */
+    #header.scrolled {
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border), 0 8px 32px rgba(0,0,0,0.4);
+      height: 68px;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      line-height: 1;
+    }
+
+    .logo-main {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .logo-main span {
+      color: var(--gold);
+    }
+
+    .logo-sub {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      position: relative;
+      transition: color var(--transition-fast);
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition-base);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Hamburguer */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: transform var(--transition-base), opacity var(--transition-fast), width var(--transition-base);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(8, 8, 8, 0.98);
+      backdrop-filter: blur(16px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-base);
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      transition: color var(--transition-fast);
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      color: var(--gold);
+    }
+
+    .mobile-nav-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, transparent, var(--gold-dim), transparent);
+    }
+
+    /* ================================================
+       HERO
+    ================================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
+
+    /* Fundo com gradiente e textura sutil */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 60% 40%, rgba(201,169,110,0.06) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 70% at 20% 80%, rgba(201,169,110,0.04) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 100%);
+    }
+
+    /* Ornamento decorativo sutil */
+    .hero-ornament {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.07);
+      pointer-events: none;
+    }
+
+    .hero-ornament::before {
+      content: '';
+      position: absolute;
+      inset: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.05);
+    }
+
+    .hero-ornament::after {
+      content: '';
+      position: absolute;
+      inset: 80px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.04);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      padding-top: var(--header-h);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-eyebrow-text {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--text-primary);
+      max-width: 680px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.35s both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s ease 0.5s both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 72px;
+      animation: fadeUp 0.8s ease 0.65s both;
+    }
+
+    /* Botão primário */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: #0A0A0A;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.15);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* Botão secundário (outline) */
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 32px;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(245,240,232,0.25);
+      border-radius: var(--radius-sm);
+      transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline:active { transform: translateY(0); }
+
+    /* Stats */
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+      align-self: center;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      animation: fadeIn 1s ease 1.2s both;
+    }
+
+    .hero-scroll span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--gold-dim), transparent);
+      animation: shimmer 2s ease infinite;
+    }
+
+    /* ================================================
+       SEÇÃO SOBRE
+    ================================================ */
+    #sobre {
+      padding: 120px 0;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #sobre::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* Coluna da imagem */
+    .sobre-image-wrap {
+      position: relative;
+    }
+
+    .sobre-image-frame {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--bg-elevated);
+    }
+
+    .sobre-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .sobre-image-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Overlay dourado na imagem */
+    .sobre-image-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(201,169,110,0.12) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Borda decorativa deslocada */
+    .sobre-image-border {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Badge na imagem */
+    .sobre-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      z-index: 2;
+    }
+
+    .sobre-badge-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .sobre-badge-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Coluna de texto */
+    .sobre-text {
+      padding: 8px 0;
+    }
+
+    .sobre-text p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .sobre-text p strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* Tags de especialidade */
+    .sobre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .sobre-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      background: rgba(201,169,110,0.05);
+      font-weight: 400;
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .sobre-tag:hover {
+      background: rgba(201,169,110,0.12);
+      border-color: var(--gold-dim);
+    }
+
+    /* ================================================
+       SEÇÃO SERVIÇOS
+    ================================================ */
+    #servicos {
+      padding: 120px 0;
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    #servicos::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .servicos-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .servicos-header .gold-line {
+      margin: 20px auto 0;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    /* Card de serviço */
+    .servico-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 24px 32px;
+      cursor: pointer;
+      transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .servico-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .servico-card:hover {
+      border-color: var(--border);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4), var(--shadow-gold);
+      background: var(--bg-elevated);
+    }
+
+    .servico-card:hover::before {
+      opacity: 1;
+    }
+
+    .servico-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+      transition: border-color var(--transition-base), background var(--transition-base);
+    }
+
+    .servico-card:hover .servico-icon {
+      border-color: var(--gold-dim);
+      background: rgba(201,169,110,0.08);
+    }
+
+    .servico-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .servico-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .servico-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .servico-cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      font-weight: 500;
+      margin-top: 8px;
+      transition: color var(--transition-fast), gap var(--transition-fast);
+    }
+
+    .servico-card:hover .servico-cta {
+      color: var(--gold);
+      gap: 10px;
+    }
+
+    .servico-cta svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ================================================
+       SEÇÃO PORTFÓLIO
+    ================================================ */
+    #portfolio {
+      padding: 120px 0;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    #portfolio::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .portfolio-header .gold-line {
+      margin: 20px auto 0;
+    }
+
+    /* Filtros */
+    .portfolio-filters {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .filter-btn {
+      padding: 9px 22px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      background: transparent;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--border);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0A0A0A;
+      font-weight: 600;
+    }
+
+    /* Grid do portfólio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--bg-elevated);
+      aspect-ratio: 4/3;
+    }
+
+    /* Ocultar itens filtrados */
+    .portfolio-item.hidden {
+      display: none;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Overlay no hover */
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10,10,10,0.85) 0%,
+        transparent 50%
+      );
+      opacity: 0;
+      transition: opacity var(--transition-base);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .portfolio-overlay-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-overlay-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .portfolio-overlay-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ================================================
+       LIGHTBOX
+    ================================================ */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(5, 5, 5, 0.96);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox-img {
+      max-width: 85vw;
+      max-height: 85vh;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.1);
+    }
+
+    .lightbox-close svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-primary);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+    }
+
+    .lightbox-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+      background: rgba(10,10,10,0.6);
+    }
+
+    .lightbox-btn:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.1);
+    }
+
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+
+    .lightbox-prev:hover { transform: translateY(-50%) translateX(-3px); }
+    .lightbox-next:hover { transform: translateY(-50%) translateX(3px); }
+
+    .lightbox-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-primary);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .lightbox-counter {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+    }
+
+    /* ================================================
+       SEÇÃO CONTATO
+    ================================================ */
+    #contato {
+      padding: 120px 0;
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    #contato::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Coluna esquerda — informações */
+    .contato-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .contato-info p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .contato-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contato-item-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contato-item-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contato-item-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contato-item-value {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    .contato-item-value a {
+      color: var(--text-primary);
+      transition: color var(--transition-fast);
+    }
+
+    .contato-item-value a:hover {
+      color: var(--gold);
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: #25D366;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+    }
+
+    .btn-whatsapp svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Formulário */
+    .contato-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      width: 100%;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--gold-dim);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.08);
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath stroke='%237A7068' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M4 6l4 4 4-4' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: #0A0A0A;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .form-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Feedback do formulário */
+    .form-feedback {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .form-feedback.success {
+      background: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      color: #4ade80;
+      display: block;
+    }
+
+    .form-feedback.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      display: block;
+    }
+
+    /* ================================================
+       FOOTER
+    ================================================ */
+    #footer {
+      padding: 48px 0 32px;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    #footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .back-to-top {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+      border: none;
+      background: none;
+      font-family: var(--font-body);
+    }
+
+    .back-to-top:hover { color: var(--gold); }
+
+    .back-to-top svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ================================================
+       RESPONSIVO — TABLET
+    ================================================ */
+    @media (max-width: 1024px) {
+      .sobre-grid {
+        gap: 56px;
+      }
+      .contato-grid {
+        gap: 56px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .sobre-image-wrap {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    /* ================================================
+       RESPONSIVO — MOBILE
+    ================================================ */
+    @media (max-width: 640px) {
+      :root { --header-h: 68px; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+      }
+
+      .hero-stats {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .stat-divider { display: none; }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .servicos-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contato-form-wrap {
+        padding: 24px;
+      }
+
+      .sobre-badge {
+        bottom: -12px;
+        right: 12px;
+      }
+
+      .lightbox-btn { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================================
+       HEADER / NAVBAR
+  ================================================ -->
+  <header id="header" role="banner">
+    <div class="header-inner">
+
+      <a href="#hero" class="logo" aria-label="GS.Fotografia — Início">
+        <span class="logo-main">GS<span>.</span>Fotografia</span>
+        <span class="logo-sub">Brasília · DF</span>
+      </a>
+
+      <nav class="nav-links" role="navigation" aria-label="Navegação principal">
+        <a href="#hero"      class="nav-link active">Início</a>
+        <a href="#sobre"     class="nav-link">Sobre</a>
+        <a href="#servicos"  class="nav-link">Serviços</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#contato"   class="nav-link">Contato</a>
+      </nav>
+
+      <!-- Hamburguer para mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Menu mobile overlay -->
+  <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Menu mobile">
+    <div class="mobile-nav-line"></div>
+    <a href="#hero"      class="mobile-nav-link">Início</a>
+    <a href="#sobre"     class="mobile-nav-link">Sobre</a>
+    <a href="#servicos"  class="mobile-nav-link">Serviços</a>
+    <a href="#portfolio" class="mobile-nav-link">Portfólio</a>
+    <a href="#contato"   class="mobile-nav-link">Contato</a>
+    <div class="mobile-nav-line"></div>
+  </nav>
+
+
+  <!-- ================================================
+       HERO
+  ================================================ -->
+  <section id="hero" aria-label="Apresentação">
+
+    <div class="hero-bg">
+      <div class="hero-bg-gradient"></div>
+    </div>
+
+    <!-- Ornamento decorativo circular -->
+    <div class="hero-ornament" aria-hidden="true"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Fotógrafo Profissional · Brasília DF</span>
+      </div>
+
+      <h1 class="hero-title">
+        Imagens que contam<br /><em>histórias inesquecíveis</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Cada momento tem uma luz única. Capturo com sensibilidade e precisão os instantes
+        que você vai querer guardar para sempre — com o cuidado e a atenção que cada história merece.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn-primary">
+          <!-- SVG: grid -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Ver Portfólio
+        </a>
+        <a href="#contato" class="btn-outline">
+          Solicitar Orçamento
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">2+</span>
+          <span class="stat-label">Anos de experiência</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">14+</span>
+          <span class="stat-label">Projetos realizados</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">99%</span>
+          <span class="stat-label">Clientes satisfeitos</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Rolar</span>
+      <div class="scroll-line"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       SOBRE
+  ================================================ -->
+  <section id="sobre" aria-labelledby="sobre-titulo">
+    <div class="container">
+
+      <div class="sobre-grid">
+
+        <!-- Imagem de perfil -->
+        <div class="sobre-image-wrap reveal">
+          <div class="sobre-image-frame">
+            <img
+              src="assets/img/perfil.jpg"
+              alt="Fotógrafo GS.Fotografia em Brasília DF"
+              loading="lazy"
+            />
+          </div>
+          <!-- Borda decorativa deslocada -->
+          <div class="sobre-image-border" aria-hidden="true"></div>
+          <!-- Badge de experiência -->
+          <div class="sobre-badge" aria-hidden="true">
+            <div class="sobre-badge-number">2+</div>
+            <div class="sobre-badge-text">Anos de arte</div>
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="sobre-text reveal">
+
+          <span class="section-label">Quem sou</span>
+          <h2 class="section-title" id="sobre-titulo">
+            Sensibilidade,<br />técnica e <em style="font-style:italic; color:var(--gold);">dedicação</em>
+          </h2>
+          <div class="gold-line"></div>
+
+          <p>
+            Sou <strong>fotógrafo profissional baseado em Brasília DF</strong>, apaixonado por revelar
+            a beleza autêntica de cada instante. Com mais de dois anos de atuação intensa no mercado,
+            construí uma abordagem que combina técnica refinada com um olhar genuinamente sensível às
+            emoções humanas.
+          </p>
+          <p>
+            Meu trabalho nasce do respeito profundo por cada história que me é confiada. Seja em um
+            casamento repleto de detalhes, em um ensaio íntimo de casal ou na alegria de um chá de
+            fralda — <strong>cada projeto recebe atenção total, do primeiro contato até a entrega final</strong>.
+          </p>
+          <p>
+            Acredito que uma fotografia de qualidade vai muito além da técnica: ela preserva emoções,
+            conecta gerações e transforma momentos ordinários em memórias extraordinárias. É isso
+            que me motiva a dar o melhor em cada clique.
+          </p>
+
+          <!-- Tags de especialidade -->
+          <div class="sobre-tags" role="list">
+            <span class="sobre-tag" role="listitem">Casamentos</span>
+            <span class="sobre-tag" role="listitem">Ensaios de Casal</span>
+            <span class="sobre-tag" role="listitem">Chá de Fralda</span>
+            <span class="sobre-tag" role="listitem">Eventos</span>
+            <span class="sobre-tag" role="listitem">Brasília DF</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SERVIÇOS
+       Clicar em um card: scroll para portfólio + filtro automático
+  ================================================ -->
+  <section id="servicos" aria-labelledby="servicos-titulo">
+    <div class="container">
+
+      <div class="servicos-header">
+        <span class="section-label">O que ofereço</span>
+        <h2 class="section-title" id="servicos-titulo">Serviços fotográficos</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Cada serviço é pensado para capturar com autenticidade o que há de mais significativo em cada ocasião.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="servicos-grid">
+
+        <!-- Casamentos -->
+        <!-- data-filter: valor da categoria no portfólio -->
+        <div class="servico-card reveal" data-filter="Casamento" role="button" tabindex="0" aria-label="Ver portfólio de Casamentos">
+          <div class="servico-icon" aria-hidden="true">
+            <!-- Ícone: coração -->
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="servico-name">Casamentos</div>
+          <p class="servico-desc">Cobertura completa do grande dia — da cerimônia à festa — com discrição, emoção e qualidade incomparáveis.</p>
+          <div class="servico-cta">
+            Ver fotos
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Ensaio de Casal -->
+        <div class="servico-card reveal" data-filter="Casal" role="button" tabindex="0" aria-label="Ver portfólio de Ensaios de Casal">
+          <div class="servico-icon" aria-hidden="true">
+            <!-- Ícone: pessoas -->
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="servico-name">Ensaio de Casal</div>
+          <p class="servico-desc">Sessões personalizadas que revelam a essência e a cumplicidade do casal, em locações internas ou externas.</p>
+          <div class="servico-cta">
+            Ver fotos
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Cobertura de Eventos -->
+        <div class="servico-card reveal" data-filter="Eventos" role="button" tabindex="0" aria-label="Ver portfólio de Cobertura de Eventos">
+          <div class="servico-icon" aria-hidden="true">
+            <!-- Ícone: câmera -->
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <div class="servico-name">Cobertura de Eventos</div>
+          <p class="servico-desc">Registro profissional de eventos corporativos, sociais e culturais, com atenção aos detalhes e aos melhores momentos.</p>
+          <div class="servico-cta">
+            Ver fotos
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Chá de Fralda -->
+        <div class="servico-card reveal" data-filter="Fralda" role="button" tabindex="0" aria-label="Ver portfólio de Chá de Fralda">
+          <div class="servico-icon" aria-hidden="true">
+            <!-- Ícone: estrela -->
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="servico-name">Chá de Fralda</div>
+          <p class="servico-desc">Capturo a emoção e a leveza da chegada de um novo ser, eternizando a celebração com carinho e delicadeza.</p>
+          <div class="servico-cta">
+            Ver fotos
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Ocasiões Especiais -->
+        <div class="servico-card reveal" data-filter="Todos" role="button" tabindex="0" aria-label="Ver todo o portfólio">
+          <div class="servico-icon" aria-hidden="true">
+            <!-- Ícone: brilho -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <div class="servico-name">Ocasiões Especiais</div>
+          <p class="servico-desc">Aniversários, formaturas, batizados e demais celebrações que merecem ser imortalizadas com excelência.</p>
+          <div class="servico-cta">
+            Ver portfólio
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       PORTFÓLIO
+  ================================================ -->
+  <section id="portfolio" aria-labelledby="portfolio-titulo">
+    <div class="container">
+
+      <div class="portfolio-header">
+        <span class="section-label">Trabalhos selecionados</span>
+        <h2 class="section-title" id="portfolio-titulo">Portfólio</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Uma seleção cuidadosa dos projetos mais marcantes — cada imagem conta uma história única.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <!-- Botões de filtro -->
+      <div class="portfolio-filters" role="tablist" aria-label="Filtrar por categoria">
+        <button class="filter-btn active" data-cat="Todos" role="tab" aria-selected="true">Todos</button>
+        <button class="filter-btn" data-cat="Casamento" role="tab" aria-selected="false">Casamentos</button>
+        <button class="filter-btn" data-cat="Casal" role="tab" aria-selected="false">Ensaio de Casal</button>
+        <button class="filter-btn" data-cat="Fralda" role="tab" aria-selected="false">Chá de Fralda</button>
+        <button class="filter-btn" data-cat="Eventos" role="tab" aria-selected="false">Eventos</button>
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- Casamentos -->
+        <div class="portfolio-item" data-cat="Casamento" data-index="0" tabindex="0" role="button" aria-label="Abrir foto de casamento 1">
+          <img src="assets/img/portfolio-1.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casamento" data-index="1" tabindex="0" role="button" aria-label="Abrir foto de casamento 2">
+          <img src="assets/img/portfolio-2.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casamento" data-index="2" tabindex="0" role="button" aria-label="Abrir foto de casamento 3">
+          <img src="assets/img/portfolio-3.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casamento" data-index="3" tabindex="0" role="button" aria-label="Abrir foto de casamento 4">
+          <img src="assets/img/portfolio-4.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casamento" data-index="4" tabindex="0" role="button" aria-label="Abrir foto de casamento 5">
+          <img src="assets/img/portfolio-5.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casamento" data-index="5" tabindex="0" role="button" aria-label="Abrir foto de casamento 6">
+          <img src="assets/img/portfolio-6.jpg" alt="Fotografia de casamento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ensaio de Casal -->
+        <div class="portfolio-item" data-cat="Casal" data-index="0" tabindex="0" role="button" aria-label="Abrir ensaio de casal 1">
+          <img src="assets/img/casal-01.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casal" data-index="1" tabindex="0" role="button" aria-label="Abrir ensaio de casal 2">
+          <img src="assets/img/casal-02.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casal" data-index="2" tabindex="0" role="button" aria-label="Abrir ensaio de casal 3">
+          <img src="assets/img/casal-03.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casal" data-index="3" tabindex="0" role="button" aria-label="Abrir ensaio de casal 4">
+          <img src="assets/img/casal-04.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casal" data-index="4" tabindex="0" role="button" aria-label="Abrir ensaio de casal 5">
+          <img src="assets/img/casal-05.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Casal" data-index="5" tabindex="0" role="button" aria-label="Abrir ensaio de casal 6">
+          <img src="assets/img/casal-06.jpg" alt="Ensaio fotográfico de casal em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chá de Fralda -->
+        <div class="portfolio-item" data-cat="Fralda" data-index="0" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 1">
+          <img src="assets/img/cha-01.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Fralda" data-index="1" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 2">
+          <img src="assets/img/cha-02.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Fralda" data-index="2" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 3">
+          <img src="assets/img/cha-03.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Fralda" data-index="3" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 4">
+          <img src="assets/img/cha-04.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Fralda" data-index="4" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 5">
+          <img src="assets/img/cha-05.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Fralda" data-index="5" tabindex="0" role="button" aria-label="Abrir foto de chá de fralda 6">
+          <img src="assets/img/cha-06.jpg" alt="Fotografia de chá de fralda em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eventos -->
+        <div class="portfolio-item" data-cat="Eventos" data-index="0" tabindex="0" role="button" aria-label="Abrir foto de evento 1">
+          <img src="assets/img/evento-01.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Eventos" data-index="1" tabindex="0" role="button" aria-label="Abrir foto de evento 2">
+          <img src="assets/img/evento-02.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Eventos" data-index="2" tabindex="0" role="button" aria-label="Abrir foto de evento 3">
+          <img src="assets/img/evento-03.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Eventos" data-index="3" tabindex="0" role="button" aria-label="Abrir foto de evento 4">
+          <img src="assets/img/evento-04.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Eventos" data-index="4" tabindex="0" role="button" aria-label="Abrir foto de evento 5">
+          <img src="assets/img/evento-05.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-cat="Eventos" data-index="5" tabindex="0" role="button" aria-label="Abrir foto de evento 6">
+          <img src="assets/img/evento-06.jpg" alt="Fotografia de evento em Brasília DF" loading="lazy" />
+          <div class="portfolio-overlay" aria-hidden="true">
+            <div class="portfolio-overlay-content">
+              <div class="portfolio-overlay-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <span class="portfolio-overlay-label">Ampliar</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /portfolio-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       LIGHTBOX
+  ================================================ -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens">
+
+    <!-- Fechar -->
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar lightbox">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <!-- Anterior -->
+    <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <!-- Imagem -->
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    </div>
+
+    <!-- Próxima -->
+    <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Próxima foto">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Contador -->
+    <div class="lightbox-counter" id="lightboxCounter" aria-live="polite"></div>
+
+  </div>
+
+
+  <!-- ================================================
+       CONTATO
+  ================================================ -->
+  <section id="contato" aria-labelledby="contato-titulo">
+    <div class="container">
+
+      <div class="contato-grid">
+
+        <!-- Informações de contato -->
+        <div class="contato-info reveal">
+          <span class="section-label">Fale comigo</span>
+          <h2 id="contato-titulo">
+            Vamos criar algo<br /><em style="font-family:var(--font-display); font-style:italic; color:var(--gold);">extraordinário</em>
+          </h2>
+          <div class="gold-line"></div>
+          <p>
+            Está pensando em contratar um fotógrafo para o seu momento especial? Entre em contato
+            e conversemos sobre o seu projeto — sem compromisso e com toda a atenção que você merece.
+          </p>
+
+          <div class="contato-items">
+
+            <div class="contato-item">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contato-item-label">E-mail</div>
+                <div class="contato-item-value">
+                  <a href="mailto:agranpolo1@gmail.com">agranpolo1@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon" aria-hidden="true">
+                <!-- WhatsApp icon simplificado -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <div class="contato-item-label">WhatsApp</div>
+                <div class="contato-item-value">
+                  <a href="https://wa.me/5561992651106" target="_blank" rel="noopener">(61) 99265-1106</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <div class="contato-item-label">Instagram</div>
+                <div class="contato-item-value">
+                  <a href="https://www.instagram.com/igab.el" target="_blank" rel="noopener">@igab.el</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contato-item-label">Localização</div>
+                <div class="contato-item-value">Brasília DF — Brasil</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CTA WhatsApp -->
+          <a
+            href="https://wa.me/5561992651106?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento!"
+            target="_blank"
+            rel="noopener"
+            class="btn-whatsapp"
+            aria-label="Enviar mensagem via WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+
+        </div>
+
+        <!-- Formulário de contato -->
+        <!-- ================================================
+             FORMULÁRIO — PRONTO PARA INTEGRAÇÃO COM GOOGLE SHEETS
+             Para conectar ao Google Apps Script:
+             1. Crie um Apps Script associado a uma planilha Google
+             2. Publique como Web App (Execute as: Me, Who has access: Anyone)
+             3. Substitua a URL abaixo pelo endpoint gerado:
+                var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/SEU_SCRIPT_ID/exec';
+             4. Altere a função handleFormSubmit para fazer fetch() real ao endpoint
+        ================================================ -->
+        <div class="contato-form-wrap reveal">
+
+          <div class="form-title">Solicite seu orçamento</div>
+          <p class="form-subtitle">Respondo em até 24 horas.</p>
+
+          <form id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fieldNome">Nome *</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="fieldNome"
+                  name="nome"
+                  placeholder="Seu nome completo"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fieldTelefone">Telefone</label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="fieldTelefone"
+                  name="telefone"
+                  placeholder="(61) 9 0000-0000"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fieldEmail">E-mail *</label>
+              <input
+                class="form-input"
+                type="email"
+                id="fieldEmail"
+                name="email"
+                placeholder="seu@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fieldServico">Tipo de serviço</label>
+              <select class="form-select" id="fieldServico" name="servico">
+                <option value="">Selecione um serviço...</option>
+                <option value="Casamento">Casamento</option>
+                <option value="Ensaio de Casal">Ensaio de Casal</option>
+                <option value="Chá de Fralda">Chá de Fralda</option>
+                <option value="Cobertura de Evento">Cobertura de Evento</option>
+                <option value="Ocasião Especial">Ocasião Especial</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fieldMensagem">Mensagem *</label>
+              <textarea
+                class="form-textarea"
+                id="fieldMensagem"
+                name="mensagem"
+                placeholder="Conte-me sobre o seu projeto, data prevista, local e outras informações relevantes..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="formSubmitBtn">
+              Enviar mensagem
+            </button>
+
+            <!-- Feedback de envio -->
+            <div class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-logo">
+          GS<span>.</span>Fotografia
+        </div>
+
+        <p class="footer-copy">
+          &copy; <span id="currentYear"></span> GS.Fotografia · Brasília DF · Todos os direitos reservados
+        </p>
+
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">
+          <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          Voltar ao topo
+        </button>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================
+       JAVASCRIPT — ES5
+       Compatível com todos os browsers modernos
+       Sem arrow functions, sem const/let em ambientes antigos
+  ================================================ -->
+  <script>
+  (function() {
+
+    // ================================================
+    // UTILITÁRIOS
+    // ================================================
+
+    // Selecionar elemento
+    function qs(selector) {
+      return document.querySelector(selector);
+    }
+
+    // Selecionar todos os elementos
+    function qsa(selector) {
+      return document.querySelectorAll(selector);
+    }
+
+    // Scroll suave até seção
+    function scrollToSection(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 80;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - headerH;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    // ================================================
+    // ANO NO FOOTER
+    // ================================================
+    var yearEl = qs('#currentYear');
+    if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+    // ================================================
+    // NAVBAR — SCROLL
+    // Adiciona classe "scrolled" ao fazer scroll
+    // ================================================
+    var header = qs('#header');
+    var SCROLL_THRESHOLD = 60;
+
+    function handleScroll() {
+      if (window.pageYOffset > SCROLL_THRESHOLD) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      updateActiveNavLink();
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // estado inicial
+
+    // ================================================
+    // NAVBAR — LINK ATIVO CONFORME SEÇÃO VISÍVEL
+    // ================================================
+    var sections = ['hero', 'sobre', 'servicos', 'portfolio', 'contato'];
+    var navLinks = qsa('.nav-link');
+    var mobileNavLinks = qsa('.mobile-nav-link');
+
+    function updateActiveNavLink() {
+      var scrollPos = window.pageYOffset;
+      var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 80;
+      var currentSection = '';
+
+      for (var i = 0; i < sections.length; i++) {
+        var sec = document.getElementById(sections[i]);
+        if (!sec) continue;
+        var offsetTop = sec.offsetTop - headerH - 20;
+        if (scrollPos >= offsetTop) {
+          currentSection = sections[i];
+        }
+      }
+
+      for (var j = 0; j < navLinks.length; j++) {
+        var link = navLinks[j];
+        var href = link.getAttribute('href').replace('#', '');
+        if (href === currentSection) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+      for (var k = 0; k < mobileNavLinks.length; k++) {
+        var mlink = mobileNavLinks[k];
+        var mhref = mlink.getAttribute('href').replace('#', '');
+        if (mhref === currentSection) {
+          mlink.classList.add('active');
+        } else {
+          mlink.classList.remove('active');
+        }
+      }
+    }
+
+    // ================================================
+    // MENU HAMBÚRGUER (MOBILE)
+    // ================================================
+    var hamburger = qs('#hamburger');
+    var mobileNav = qs('#mobileNav');
+
+    function toggleMobileMenu() {
+      var isOpen = hamburger.classList.toggle('open');
+      if (isOpen) {
+        mobileNav.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    if (hamburger) {
+      hamburger.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Fechar menu ao clicar em link mobile
+    var mobLinks = qsa('.mobile-nav-link');
+    for (var ml = 0; ml < mobLinks.length; ml++) {
+      mobLinks[ml].addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = this.getAttribute('href').replace('#', '');
+        closeMobileMenu();
+        setTimeout(function() {
+          scrollToSection(target);
+        }, 200);
+      });
+    }
+
+    // ================================================
+    // SCROLL SUAVE — LINKS DO HEADER
+    // ================================================
+    var allNavLinks = qsa('.nav-link');
+    for (var nl = 0; nl < allNavLinks.length; nl++) {
+      allNavLinks[nl].addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = this.getAttribute('href').replace('#', '');
+        scrollToSection(target);
+      });
+    }
+
+    // CTA botões hero
+    var heroCtas = qsa('.hero-cta a');
+    for (var hc = 0; hc < heroCtas.length; hc++) {
+      heroCtas[hc].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href && href.charAt(0) === '#') {
+          e.preventDefault();
+          scrollToSection(href.replace('#', ''));
+        }
+      });
+    }
+
+    // Logo
+    var logoLink = qs('.logo');
+    if (logoLink) {
+      logoLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollToSection('hero');
+      });
+    }
+
+    // ================================================
+    // VOLTAR AO TOPO
+    // ================================================
+    var backToTopBtn = qs('#backToTop');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // ================================================
+    // REVEAL — ANIMAÇÃO DE ENTRADA AO ROLAR
+    // O conteúdo é sempre visível; o JS adiciona
+    // transição suave ao entrar na viewport
+    // ================================================
+    var revealEls = qsa('.reveal');
+
+    // Define estado inicial apenas se o elemento não está no viewport
+    function initReveal(el) {
+      var rect = el.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight - 60;
+      if (!inView) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+      } else {
+        el.classList.add('visible');
+      }
+    }
+
+    function checkReveal() {
+      for (var r = 0; r < revealEls.length; r++) {
+        var el = revealEls[r];
+        if (el.classList.contains('visible')) continue;
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+          el.style.opacity = '';
+          el.style.transform = '';
+        }
+      }
+    }
+
+    for (var rv = 0; rv < revealEls.length; rv++) {
+      initReveal(revealEls[rv]);
+    }
+
+    window.addEventListener('scroll', checkReveal, { passive: true });
+    checkReveal();
+
+    // ================================================
+    // PORTFÓLIO — FILTRO
+    // Usa display:none / display:block (nunca opacity:0)
+    // ================================================
+    var filterBtns  = qsa('.filter-btn');
+    var portfolioItems = qsa('.portfolio-item');
+    var currentFilter = 'Todos';
+
+    function applyFilter(cat) {
+      currentFilter = cat;
+
+      // Atualizar botões
+      for (var fb = 0; fb < filterBtns.length; fb++) {
+        var btn = filterBtns[fb];
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+        } else {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        }
+      }
+
+      // Mostrar / ocultar itens
+      for (var pi = 0; pi < portfolioItems.length; pi++) {
+        var item = portfolioItems[pi];
+        var itemCat = item.getAttribute('data-cat');
+        if (cat === 'Todos' || itemCat === cat) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      }
+    }
+
+    for (var fb2 = 0; fb2 < filterBtns.length; fb2++) {
+      filterBtns[fb2].addEventListener('click', function() {
+        var cat = this.getAttribute('data-cat');
+        applyFilter(cat);
+      });
+    }
+
+    // ================================================
+    // SERVIÇOS — CLICAR REDIRECIONA AO PORTFÓLIO COM FILTRO
+    // ================================================
+    var servicoCards = qsa('.servico-card');
+
+    for (var sc = 0; sc < servicoCards.length; sc++) {
+      servicoCards[sc].addEventListener('click', function() {
+        var filter = this.getAttribute('data-filter');
+        applyFilter(filter);
+        scrollToSection('portfolio');
+      });
+
+      // Suporte a teclado
+      servicoCards[sc].addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    }
+
+    // ================================================
+    // LIGHTBOX
+    // Navegação por botões e teclado
+    // ================================================
+    var lightbox     = qs('#lightbox');
+    var lightboxImg  = qs('#lightboxImg');
+    var lightboxClose = qs('#lightboxClose');
+    var lightboxPrev = qs('#lightboxPrev');
+    var lightboxNext = qs('#lightboxNext');
+    var lightboxCounter = qs('#lightboxCounter');
+
+    var lightboxImages = []; // lista de imagens visíveis no filtro atual
+    var lightboxIndex  = 0;
+
+    function getVisibleImages() {
+      var imgs = [];
+      for (var i = 0; i < portfolioItems.length; i++) {
+        if (!portfolioItems[i].classList.contains('hidden')) {
+          var imgEl = portfolioItems[i].querySelector('img');
+          if (imgEl) {
+            imgs.push({
+              src: imgEl.getAttribute('src'),
+              alt: imgEl.getAttribute('alt') || ''
+            });
+          }
+        }
+      }
+      return imgs;
+    }
+
+    function openLightbox(index) {
+      lightboxImages = getVisibleImages();
+      if (!lightboxImages.length) return;
+      lightboxIndex = index;
+      updateLightboxImage();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    function updateLightboxImage() {
+      var data = lightboxImages[lightboxIndex];
+      if (!data) return;
+      lightboxImg.src    = data.src;
+      lightboxImg.alt    = data.alt;
+      lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+    }
+
+    function lightboxGoPrev() {
+      lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+      updateLightboxImage();
+    }
+
+    function lightboxGoNext() {
+      lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+      updateLightboxImage();
+    }
+
+    // Clique nos itens do portfólio
+    for (var pit = 0; pit < portfolioItems.length; pit++) {
+      portfolioItems[pit].addEventListener('click', (function(idx) {
+        return function() {
+          // Calcular índice entre os visíveis
+          var visibles = [];
+          for (var v = 0; v < portfolioItems.length; v++) {
+            if (!portfolioItems[v].classList.contains('hidden')) {
+              visibles.push(v);
+            }
+          }
+          var pos = visibles.indexOf(idx);
+          openLightbox(pos >= 0 ? pos : 0);
+        };
+      })(pit));
+
+      // Teclado
+      portfolioItems[pit].addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    }
+
+    // Botões do lightbox
+    if (lightboxClose) { lightboxClose.addEventListener('click', closeLightbox); }
+    if (lightboxPrev)  { lightboxPrev.addEventListener('click', lightboxGoPrev); }
+    if (lightboxNext)  { lightboxNext.addEventListener('click', lightboxGoNext); }
+
+    // Fechar ao clicar no fundo
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) { closeLightbox(); }
+    });
+
+    // Navegação por teclado
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')      { closeLightbox(); }
+      if (e.key === 'ArrowLeft')   { lightboxGoPrev(); }
+      if (e.key === 'ArrowRight')  { lightboxGoNext(); }
+    });
+
+    // Swipe (toque no mobile)
+    var touchStartX = 0;
+    var touchEndX   = 0;
+
+    lightbox.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) { lightboxGoNext(); }
+        else          { lightboxGoPrev(); }
+      }
+    }, { passive: true });
+
+    // ================================================
+    // FORMULÁRIO DE CONTATO
+    //
+    // Para integrar com Google Sheets via Apps Script:
+    // 1. Crie um Google Apps Script vinculado a uma planilha
+    // 2. No script, crie uma função doPost(e) que salva os dados
+    // 3. Publique como Web App
+    // 4. Substitua o valor de ENDPOINT_URL pela URL gerada
+    // 5. Descomente o bloco de fetch() abaixo e remova o timeout de simulação
+    //
+    // Exemplo de doPost para Apps Script:
+    // function doPost(e) {
+    //   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    //   var data = JSON.parse(e.postData.contents);
+    //   sheet.appendRow([new Date(), data.nome, data.email, data.telefone, data.servico, data.mensagem]);
+    //   return ContentService.createTextOutput('ok');
+    // }
+    // ================================================
+
+    // var ENDPOINT_URL = 'https://script.google.com/macros/s/SEU_SCRIPT_ID/exec';
+
+    var contactForm = qs('#contactForm');
+    var formFeedback = qs('#formFeedback');
+    var formSubmitBtn = qs('#formSubmitBtn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleFormSubmit();
+      });
+    }
+
+    function handleFormSubmit() {
+      var nome     = qs('#fieldNome').value.trim();
+      var email    = qs('#fieldEmail').value.trim();
+      var mensagem = qs('#fieldMensagem').value.trim();
+
+      // Validação básica
+      if (!nome || !email || !mensagem) {
+        showFormFeedback('error', 'Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showFormFeedback('error', 'Por favor, insira um endereço de e-mail válido.');
+        return;
+      }
+
+      // Estado de carregamento
+      formSubmitBtn.textContent = 'Enviando...';
+      formSubmitBtn.disabled = true;
+
+      /* ---- INTEGRAÇÃO REAL COM GOOGLE SHEETS (descomente quando tiver o endpoint) ----
+      var payload = {
+        nome:     nome,
+        email:    email,
+        telefone: qs('#fieldTelefone').value.trim(),
+        servico:  qs('#fieldServico').value,
+        mensagem: mensagem
+      };
+
+      fetch(ENDPOINT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      })
+      .then(function(res) { return res.text(); })
+      .then(function() {
+        formSubmitBtn.textContent = 'Enviar mensagem';
+        formSubmitBtn.disabled = false;
+        showFormFeedback('success', 'Mensagem enviada com sucesso! Retornarei em breve.');
+        contactForm.reset();
+      })
+      .catch(function() {
+        formSubmitBtn.textContent = 'Enviar mensagem';
+        formSubmitBtn.disabled = false;
+        showFormFeedback('error', 'Ocorreu um erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
+      });
+      ---- FIM DA INTEGRAÇÃO ---- */
+
+      // Simulação de envio (remova quando ativar a integração real)
+      setTimeout(function() {
+        formSubmitBtn.textContent = 'Enviar mensagem';
+        formSubmitBtn.disabled = false;
+        showFormFeedback('success', '✓ Mensagem enviada com sucesso! Entrarei em contato em breve.');
+        contactForm.reset();
+      }, 1400);
+    }
+
+    function showFormFeedback(type, message) {
+      formFeedback.className = 'form-feedback ' + type;
+      formFeedback.textContent = message;
+      // Esconder após 6 segundos
+      setTimeout(function() {
+        formFeedback.className = 'form-feedback';
+        formFeedback.textContent = '';
+      }, 6000);
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+  })();
+  </script>
+</body>
+</html>
