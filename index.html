@@ -2306,11 +2306,9 @@
              Para conectar ao Google Apps Script:
              1. Crie um Apps Script associado a uma planilha Google
              2. Publique como Web App (Execute as: Me, Who has access: Anyone)
-             3. Substitua a URL abaixo pelo endpoint gerado:
-                
-             4. Altere a função handleFormSubmit para fazer fetch() real ao endpoint
+             3. Endpoint já configurado neste arquivo
+             4. A função handleFormSubmit já faz o envio real ao Google Sheets
         ================================================ -->
-        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYtTPczGQj1odI3QlxB8KnR76bV8O51-O8VxIPSnbcXVVzUl5812wfqCf_GDpn3zEK/exec';
         <div class="contato-form-wrap reveal">
 
           <div class="form-title">Solicite seu orçamento</div>
@@ -2865,7 +2863,7 @@
     // }
     // ================================================
 
-    // var ENDPOINT_URL = 'https://script.google.com/macros/s/SEU_SCRIPT_ID/exec';
+    var ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzYtTPczGQj1odI3QlxB8KnR76bV8O51-O8VxIPSnbcXVVzUl5812wfqCf_GDpn3zEK/exec';
 
     var contactForm = qs('#contactForm');
     var formFeedback = qs('#formFeedback');
@@ -2898,40 +2896,40 @@
       formSubmitBtn.textContent = 'Enviando...';
       formSubmitBtn.disabled = true;
 
-      //* ---- INTEGRAÇÃO REAL COM GOOGLE SHEETS (descomente quando tiver o endpoint) ----
       var payload = {
-        nome:     nome,
-        email:    email,
+        nome: qs('#fieldNome').value.trim(),
+        email: email,
         telefone: qs('#fieldTelefone').value.trim(),
-        servico:  qs('#fieldServico').value,
-        mensagem: mensagem
+        servico: qs('#fieldServico').value,
+        mensagem: mensagem,
+        origem: window.location.href,
+        enviadoEm: new Date().toISOString()
       };
 
       fetch(ENDPOINT_URL, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
         body: JSON.stringify(payload)
       })
-      .then(function(res) { return res.text(); })
+      .then(function(res) {
+        if (!res.ok) {
+          throw new Error('Falha ao enviar para o Google Sheets.');
+        }
+        return res.text();
+      })
       .then(function() {
         formSubmitBtn.textContent = 'Enviar mensagem';
         formSubmitBtn.disabled = false;
-        showFormFeedback('success', 'Mensagem enviada com sucesso! Retornarei em breve.');
+        showFormFeedback('success', '✓ Mensagem enviada com sucesso! Entrarei em contato em breve.');
         contactForm.reset();
       })
       .catch(function() {
         formSubmitBtn.textContent = 'Enviar mensagem';
         formSubmitBtn.disabled = false;
-        showFormFeedback('error', 'Ocorreu um erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
+        showFormFeedback('error', 'Não foi possível enviar agora. Tente novamente em instantes ou fale comigo pelo WhatsApp.');
       });
-     // ---- FIM DA INTEGRAÇÃO ---- */
-
-      /* Simulação de envio (remova quando ativar a integração real)
-      setTimeout(function() {
-        formSubmitBtn.textContent = 'Enviar mensagem';
-        formSubmitBtn.disabled = false;
-        showFormFeedback('success', '✓ Mensagem enviada com sucesso! Entrarei em contato em breve.');
-        contactForm.reset();
-      }, 1400);*/
     }
 
     function showFormFeedback(type, message) {
