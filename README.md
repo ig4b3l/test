@@ -76,41 +76,6 @@ Para **criar uma nova categoria**:
 
 ---
 
-## Como integrar o formulário ao Google Sheets
-
-O formulário já está preparado — basta seguir os passos:
-
-1. Crie uma planilha no **Google Sheets**
-2. Vá em **Extensões → Apps Script** e cole o código abaixo:
-
-```javascript
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
-  sheet.appendRow([
-    new Date(),
-    data.nome,
-    data.email,
-    data.telefone,
-    data.servico,
-    data.mensagem
-  ]);
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: 'ok' }))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-```
-
-3. Salve e clique em **Implantar → Nova implantação**
-4. Tipo: **Aplicativo da Web** — Execute como: *Eu* — Quem tem acesso: *Qualquer pessoa*
-5. Copie a URL gerada
-6. No `index.html`, localize o comentário `INTEGRAÇÃO REAL COM GOOGLE SHEETS` e:
-   - Descomente a linha `var ENDPOINT_URL = '...'` e cole a URL
-   - Descomente o bloco `fetch()` dentro de `handleFormSubmit()`
-   - Remova o bloco de simulação (`setTimeout`) logo abaixo
-
----
-
 ## Tecnologias utilizadas
 
 | Recurso | Detalhe |
