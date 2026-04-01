@@ -2307,9 +2307,10 @@
              1. Crie um Apps Script associado a uma planilha Google
              2. Publique como Web App (Execute as: Me, Who has access: Anyone)
              3. Substitua a URL abaixo pelo endpoint gerado:
-                var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/SEU_SCRIPT_ID/exec';
+                
              4. Altere a função handleFormSubmit para fazer fetch() real ao endpoint
         ================================================ -->
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYtTPczGQj1odI3QlxB8KnR76bV8O51-O8VxIPSnbcXVVzUl5812wfqCf_GDpn3zEK/exec';
         <div class="contato-form-wrap reveal">
 
           <div class="form-title">Solicite seu orçamento</div>
@@ -2897,7 +2898,7 @@
       formSubmitBtn.textContent = 'Enviando...';
       formSubmitBtn.disabled = true;
 
-      /* ---- INTEGRAÇÃO REAL COM GOOGLE SHEETS (descomente quando tiver o endpoint) ----
+      //* ---- INTEGRAÇÃO REAL COM GOOGLE SHEETS (descomente quando tiver o endpoint) ----
       var payload = {
         nome:     nome,
         email:    email,
@@ -2922,15 +2923,15 @@
         formSubmitBtn.disabled = false;
         showFormFeedback('error', 'Ocorreu um erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
       });
-      ---- FIM DA INTEGRAÇÃO ---- */
+     // ---- FIM DA INTEGRAÇÃO ---- */
 
-      // Simulação de envio (remova quando ativar a integração real)
+      /* Simulação de envio (remova quando ativar a integração real)
       setTimeout(function() {
         formSubmitBtn.textContent = 'Enviar mensagem';
         formSubmitBtn.disabled = false;
         showFormFeedback('success', '✓ Mensagem enviada com sucesso! Entrarei em contato em breve.');
         contactForm.reset();
-      }, 1400);
+      }, 1400);*/
     }
 
     function showFormFeedback(type, message) {
